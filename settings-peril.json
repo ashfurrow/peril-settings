@@ -1,7 +1,7 @@
 {
   "settings": {},
   "rules": {
-    "issue.created": "ashfurrow/peril-settings@rules/new-issue.ts"
+    "issues.opened": "ashfurrow/peril-settings@rules/new-issue.ts"
   },
   "repos": {}
 }
