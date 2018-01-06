@@ -5,7 +5,22 @@
     "issues.opened": "ashfurrow/peril-settings@rules/new-issue.ts"
   },
   "repos": {
-    "ashfurrow/peril-settings": {
+    "ashfurrow/playgroundbook": {
+      "pull_request.closed": "ashfurrow/peril-settings@rules/aeryn.ts"
+    },
+    "ashfurrow/Nimble-Snapshots": {
+      "pull_request.closed": "ashfurrow/peril-settings@rules/aeryn.ts"
+    },
+    "ashfurrow/danger-ruby-swiftlint": {
+      "pull_request.closed": "ashfurrow/peril-settings@rules/aeryn.ts"
+    },
+    "ashfurrow/danger-swiftlint": {
+      "pull_request.closed": "ashfurrow/peril-settings@rules/aeryn.ts"
+    },
+    "ashfurrow/danger-rubocop": {
+      "pull_request.closed": "ashfurrow/peril-settings@rules/aeryn.ts"
+    },
+    "ashfurrow/twelease": {
       "pull_request.closed": "ashfurrow/peril-settings@rules/aeryn.ts"
     }
   }
