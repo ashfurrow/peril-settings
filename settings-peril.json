@@ -2,7 +2,7 @@
   "settings": {},
   "rules": {
     "pull_request": "ashfurrow/peril-settings@rules/all-prs.ts",
-    "issue.opened": "ashfurrow/peril-settings@rules/new-issue.ts"
+    "issues.opened": "ashfurrow/peril-settings@rules/new-issue.ts"
   },
   "repos": {
     "ashfurrow/playgroundbook": {
