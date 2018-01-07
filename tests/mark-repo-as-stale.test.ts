@@ -18,7 +18,7 @@ it("does nothing if the repo was updated within the last six months", () => {
   dm.danger.github = {
     api: {
       repos: {
-        get: () => Promise.resolve({ pushed_at: Date.now() }),
+        get: () => Promise.resolve({ data: { pushed_at: Date.now() } }),
       },
     },
     ...thisIssue,
@@ -32,7 +32,7 @@ it("warns if the repo was updated a long time ago", () => {
   dm.danger.github = {
     api: {
       repos: {
-        get: () => Promise.resolve({ pushed_at: "2017-01-26T19:14:43Z" }),
+        get: () => Promise.resolve({ data: { pushed_at: "2017-01-26T19:14:43Z" } }),
       },
     },
     ...thisIssue,
