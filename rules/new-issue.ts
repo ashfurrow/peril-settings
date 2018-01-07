@@ -20,7 +20,7 @@ export const markRepoAsStale = wrap(
     const result = await api.repos.get({ repo: repoName, owner: "ashfurrow" })
     // `pushed_at` is the last time that any commit was made to any branch.
     if (Date.parse(result.data.pushed_at) < sixMonthsAgo) {
-      markdown(`
+      const message = `
       Hey! It looks like this repo hasn't been updated for a while. That
       probably means the repo's not a high-priority for @ashfurrow. He'll answer 
       this issue if he can, but just a head's up.
@@ -29,7 +29,8 @@ export const markRepoAsStale = wrap(
       reported a bug, you are encouraged to open a pull request that fixes it.
       And of course, you're welcome to discuss with other developers in this
       repository's issues and pull requests. Have a great day!
-    `)
+      `
+      markdown(message)
     }
   }
 )
