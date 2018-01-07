@@ -10,8 +10,8 @@ beforeEach(() => {
   dm.markdown = jest.fn()
 })
 
-const thisPR = {
-  repo: "some-repo",
+const thisIssue = {
+  repository: { name: "some-repo" },
 }
 
 it("does nothing if the repo was updated within the last six months", () => {
@@ -21,7 +21,7 @@ it("does nothing if the repo was updated within the last six months", () => {
         get: () => Promise.resolve({ pushed_at: Date.now() }),
       },
     },
-    thisPR,
+    ...thisIssue,
   }
   return markRepoAsStale().then(() => {
     expect(dm.markdown).not.toHaveBeenCalled()
@@ -35,7 +35,7 @@ it("warns if the repo was updated a long time ago", () => {
         get: () => Promise.resolve({ pushed_at: "2017-01-26T19:14:43Z" }),
       },
     },
-    thisPR,
+    ...thisIssue,
   }
   return markRepoAsStale().then(() => {
     expect(dm.markdown).toHaveBeenCalled()

@@ -12,8 +12,8 @@ const wrap: any = isJest ? _test : _run
 export const markRepoAsStale = wrap(
   "If the repo hasn't been updated for more than six months, then post a comment",
   async () => {
-    const issue = danger.github.issue
-    const repoName = danger.github.thisPR.repo
+    const issue = (danger.github as any) as Issues
+    const repoName = issue.repository.name
     const api = danger.github.api
     const sixMonthsAgo = Date.now() - 3600 * 24 * 30 * 6
 
