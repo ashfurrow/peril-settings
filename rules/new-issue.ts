@@ -18,7 +18,7 @@ export const markRepoAsStale = async () => {
 
   const repo = await api.repos.get({ repo: repoName, owner: "ashfurrow" })
   // `pushed_at` is the last time that any commit was made to any branch.
-  if (repo.pushed_at < sixMonthsAgo) {
+  if (Date.parse(repo.pushed_at) < sixMonthsAgo) {
     markdown(`
       Hey! It looks like this repo hasn't been updated for a while. That
       probably means the repo's not a high-priority for @ashfurrow. He'll answer 

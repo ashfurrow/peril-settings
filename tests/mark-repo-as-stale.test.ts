@@ -32,7 +32,7 @@ it("warns if the repo was updated a long time ago", () => {
   dm.danger.github = {
     api: {
       repos: {
-        get: () => Promise.resolve({ pushed_at: Date.parse("2017-01-26T19:14:43Z") }),
+        get: () => Promise.resolve({ pushed_at: "2017-01-26T19:14:43Z" }),
       },
     },
     thisPR,
