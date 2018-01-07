@@ -17,10 +17,10 @@ export const markRepoAsStale = wrap(
     const api = danger.github.api
     const sixMonthsAgo = Date.now() - 3600 * 24 * 30 * 6
 
-    console.log(`fetching for ${repoName}.`)
+    markdown(`fetching for ${repoName}.`)
     const repo = await api.repos.get({ repo: repoName, owner: "ashfurrow" })
-    console.log(`pushed_at: ${repo.pushed_at}`)
-    console.log(repo)
+    markdown(`pushed_at: ${repo.pushed_at}`)
+    markdown(JSON.stringify(repo))
     // `pushed_at` is the last time that any commit was made to any branch.
     if (Date.parse(repo.pushed_at) < sixMonthsAgo) {
       markdown(`
