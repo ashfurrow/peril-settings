@@ -11,7 +11,7 @@ const wrap: any = isJest ? _test : _run
 
 export const aeryn = wrap("When a PR is merged, check if the author is in the org", async () => {
   const pr = danger.github.pr
-  const repo = danger.github.pr.head.repo.name
+  const repo = danger.github.pr.base.repo.name
   const owner = "ashfurrow"
   const username = pr.user.login
   const api = danger.github.api
