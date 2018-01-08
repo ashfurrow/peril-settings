@@ -12,7 +12,7 @@ beforeEach(() => {
         user: {
           login: "a_new_user",
         },
-        head: {
+        base: {
           repo: {
             name: "some_repo",
           },
