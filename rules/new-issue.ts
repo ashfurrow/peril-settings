@@ -26,7 +26,8 @@ export const markRepoAsStale = wrap(
     const issue = (danger.github as any) as Issues
     const repoName = issue.repository.name
     const api = danger.github.api
-    const sixMonthsAgo = Date.now() - 3600 * 24 * 30 * 6
+    const now = new Date()
+    const sixMonthsAgo = now.setMonth(now.getMonth() - 6)
 
     const result = await api.repos.get({ repo: repoName, owner: "ashfurrow" })
     // `pushed_at` is the last time that any commit was made to any branch.
