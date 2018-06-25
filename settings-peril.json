@@ -1,5 +1,7 @@
 {
-  "settings": {},
+  "settings": {
+    "env_vars": ["VACATION_END_DATE"]
+  },
   "rules": {
     "pull_request": "ashfurrow/peril-settings@rules/all-prs.ts",
     "issues.opened": "ashfurrow/peril-settings@rules/all-issues.ts"
