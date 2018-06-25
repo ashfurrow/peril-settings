@@ -22,17 +22,6 @@ export const markRepoAsStale = async () => {
   // `pushed_at` is the last time that any commit was made to any branch.
   if (Date.parse(result.data.pushed_at) < sixMonthsAgo) {
     markdown(staleMessage)
-    const debugMessage = `<details>
-      <summary>This is debug info for @ashfurrow. See https://github.com/ashfurrow/peril-settings/issues/6.</summary>
-
-      result.data.pushed_at: ${result.data.pushed_at}
-      Date.parse(result.data.pushed_at): ${Date.parse(result.data.pushed_at)}
-      sixMonthsAgo: ${sixMonthsAgo}
-      entire object: ${JSON.stringify(result)}
-
-      </details>
-      `
-    markdown(debugMessage)
   }
 }
 

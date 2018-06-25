@@ -15,7 +15,7 @@ export default async () => {
 
   const inviteMarkdown = `\
 Thanks a lot for contributing @${username}! You've been invited to be a \
-collaborator on this repo – no pressure to accept! If you'd like more\
+collaborator on this repo – no pressure to accept! If you'd like more \
 information on what this means, check out the [Moya contributor guidelines][c] \
 and feel free to reach out with any questions.
 
