@@ -2,7 +2,9 @@ jest.mock("danger", () => jest.fn())
 import * as danger from "danger"
 const dm = danger as any
 
-import { markRepoAsStale } from "../rules/new-issue"
+import { Issues } from "github-webhook-event-types"
+
+import markRepoAsStale from "../rules/mark-repo-as-stale"
 
 beforeEach(() => {
   dm.danger = {}
@@ -12,7 +14,7 @@ beforeEach(() => {
 
 const thisIssue = {
   repository: { name: "some-repo" },
-}
+} as Issues
 
 it("does nothing if the repo was updated within the last six months", () => {
   dm.danger.github = {

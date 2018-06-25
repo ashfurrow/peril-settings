@@ -1,15 +1,7 @@
 // For the inspiration for this file, see: https://github.com/RxSwiftCommunity/peril/blob/master/org/aeryn.ts
-import { schedule, danger, markdown } from "danger"
+import { danger, markdown } from "danger"
 
-// The inspiration for this is https://github.com/artsy/artsy-danger/blob/f019ee1a3abffabad65014afabe07cb9a12274e7/org/all-prs.ts
-const isJest = typeof jest !== "undefined"
-// Returns the promise itself, for testing.
-const _test = (reason: string, promise: Promise<any>) => promise
-// Schedules the promise for execution via Danger.
-const _run = (reason: string, promise: Promise<any>) => schedule(promise)
-const wrap: any = isJest ? _test : _run
-
-export const aeryn = wrap("When a PR is merged, check if the author is in the org", async () => {
+export default async () => {
   const pr = danger.github.pr
   const repo = danger.github.pr.base.repo.name
   const owner = "ashfurrow"
@@ -39,4 +31,4 @@ and feel free to reach out with any questions.
     markdown(inviteMarkdown)
     await api.repos.addCollaborator({ owner, repo, username })
   }
-})
+}

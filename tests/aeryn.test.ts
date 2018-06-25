@@ -2,7 +2,7 @@ jest.mock("danger", () => jest.fn())
 import * as danger from "danger"
 const dm = danger as any
 
-import { aeryn } from "../rules/aeryn"
+import aeryn from "../rules/aeryn"
 
 // danger.github.pr.head.repo.name
 beforeEach(() => {
