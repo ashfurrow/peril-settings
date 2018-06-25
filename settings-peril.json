@@ -1,8 +1,8 @@
 {
   "settings": {},
   "rules": {
-    "pull_request": "ashfurrow/peril-settings@rules/changelog.ts",
-    "issues.opened": "ashfurrow/peril-settings@rules/mark-repo-as-stale.ts"
+    "pull_request": "ashfurrow/peril-settings@rules/all-prs.ts",
+    "issues.opened": "ashfurrow/peril-settings@rules/all-issues.ts"
   },
   "repos": {
     "ashfurrow/playgroundbook": {

@@ -1,7 +1,7 @@
 import { danger, warn, markdown } from "danger"
 
 // Inspiration: https://github.com/artsy/artsy-danger/blob/f019ee1a3abffabad65014afabe07cb9a12274e7/org/all-prs.ts#L67-L85
-export default async () => {
+export const changelog = async () => {
   // First we check if there is a changelog in the repository.
   const pr = danger.github.pr
   const changelogs = ["CHANGELOG.md", "changelog.md", "Changelog.md", "CHANGELOG.yml"]
@@ -28,4 +28,8 @@ export default async () => {
       }
     }
   }
+}
+
+export default async () => {
+  await changelog()
 }

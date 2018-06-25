@@ -4,7 +4,7 @@ const dm = danger as any
 
 import { Issues } from "github-webhook-event-types"
 
-import markRepoAsStale from "../rules/mark-repo-as-stale"
+import { markRepoAsStale } from "../rules/all-issues"
 
 beforeEach(() => {
   dm.danger = {}
