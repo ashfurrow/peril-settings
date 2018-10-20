@@ -1,6 +1,7 @@
 {
   "settings": {
-    "env_vars": ["VACATION_END_DATE"]
+    "env_vars": ["VACATION_END_DATE"],
+    "ignored_repos": ["ashfurrow/mastodon"]
   },
   "rules": {
     "pull_request": "ashfurrow/peril-settings@rules/all-prs.ts",
