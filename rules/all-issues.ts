@@ -25,14 +25,17 @@ export const markRepoAsStale = async () => {
   }
 }
 
-export const vacation = () => {
+export const vacation = (event: Issues) => {
   const vacationEndDate = peril.env.VACATION_END_DATE
   if (!vacationEndDate) {
     return
   }
-  markdown(
-    `Hello! Thank you for the issue, but @ashfurrow is on vacation until ${vacationEndDate}. Hopefully there's another contributor available to help in the meantime – good luck!`
-  )
+  danger.github.api.issues.createComment({
+    body: `Hello! Thank you for the issue, but @ashfurrow is on vacation until ${vacationEndDate}. Hopefully there's another contributor available to help in the meantime – good luck!`,
+    number: event.issue.number,
+    owner: "ashfurrow",
+    repo: event.repository.name,
+  })
 }
 
 export default async () => {
