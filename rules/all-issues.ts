@@ -38,7 +38,7 @@ export const vacation = (event: Issues) => {
   })
 }
 
-export default async () => {
+export default async (event: Issues) => {
   await markRepoAsStale()
-  vacation()
+  vacation(event)
 }
