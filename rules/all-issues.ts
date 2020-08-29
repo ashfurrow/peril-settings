@@ -26,7 +26,7 @@ export const markRepoAsStale = async () => {
 }
 
 export const vacation = (event: Issues) => {
-  const vacationEndDate = peril.env.VACATION_END_DATE
+  const vacationEndDate = process.env.VACATION_END_DATE
   if (!vacationEndDate) {
     return
   }
