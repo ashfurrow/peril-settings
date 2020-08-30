@@ -31,5 +31,7 @@ export const changelog = async () => {
 }
 
 export default async () => {
-  await changelog()
+  // TODO: This is not working, not sure why.
+  // `danger.github.api.repos.getContent` is not a function.
+  // await changelog()
 }

@@ -1,4 +1,4 @@
-import { danger, markdown, peril } from "danger"
+import { danger, markdown } from "danger"
 import { Issues } from "github-webhook-event-types"
 
 const staleMessage = `\
@@ -25,8 +25,7 @@ export const markRepoAsStale = async () => {
   }
 }
 
-export const vacation = (event: Issues) => {
-  const vacationEndDate = process.env.VACATION_END_DATE
+export const vacation = (event: Issues, vacationEndDate?: string) => {
   if (!vacationEndDate) {
     return
   }
@@ -40,5 +39,5 @@ export const vacation = (event: Issues) => {
 
 export default async (event: Issues) => {
   await markRepoAsStale()
-  vacation(event)
+  vacation(event, process.env.VACATION_END_DATE)
 }
