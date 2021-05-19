@@ -13,6 +13,11 @@ export default async () => {
     return
   }
 
+  if (pr.user.type !== "User") {
+    // Ignore PRs from bots.
+    return
+  }
+
   const inviteMarkdown = `\
 Thanks a lot for contributing @${username}! You've been invited to be a \
 collaborator on this repo – no pressure to accept! If you'd like more \
